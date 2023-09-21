@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>zoo-aigc-parent</artifactId>
+        <groupId>com.animal</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../zoo-aigc-parent</relativePath>
+    </parent>
+    <packaging>pom</packaging>
+
+    <artifactId>zoo-aigc-dialogue</artifactId>
+    <description>zoo-aigc-dialogue</description>
+
+    <modules>
+        <module>zoo-aigc-dialogue-api</module>
+        <module>zoo-aigc-dialogue-service</module>
+        <module>zoo-aigc-dialogue-model</module>
+    </modules>
+
+
+</project>
