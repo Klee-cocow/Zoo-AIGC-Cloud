@@ -8,11 +8,19 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <name>zoo-aigc-dialogue-model</name>
+    <artifactId>zoo-aigc-dialogue-model</artifactId>
     <description>zoo-aigc-dialogue-model</description>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
     </dependencies>
 
 

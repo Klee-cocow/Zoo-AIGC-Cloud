@@ -15,9 +15,31 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.zoo.friend</groupId>
+            <artifactId>zoo-friend-sdk</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web-services</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.animal</groupId>
+            <artifactId>zoo-aigc-user-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+
+
 
         <dependency>
             <groupId>org.apache.commons</groupId>
