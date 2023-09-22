@@ -2,8 +2,9 @@ package com.animal.base.utils;
 
 import cn.hutool.http.ContentType;
 import cn.hutool.json.JSONUtil;
-import com.animal.product.common.ErrorCode;
-import com.animal.product.exception.BusinessException;
+
+import com.animal.base.common.ErrorCode;
+import com.animal.base.exception.BusinessException;
 import okhttp3.*;
 
 import java.io.IOException;

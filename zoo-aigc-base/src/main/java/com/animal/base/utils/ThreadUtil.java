@@ -1,7 +1,8 @@
 package com.animal.base.utils;
 
-import com.animal.product.common.ErrorCode;
-import com.animal.product.exception.BusinessException;
+
+import com.animal.base.common.ErrorCode;
+import com.animal.base.exception.BusinessException;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;

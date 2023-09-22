@@ -1,1 +1,7 @@
-
+spring:
+  application:
+    name: user-api
+server:
+  port: 5050
+  servlet:
+    context-path: /user

@@ -1,6 +1,6 @@
 package com.animal.base.utils;
 
-import com.animal.product.common.LocalCache;
+import com.animal.base.common.LocalCache;
 import com.zoo.friend.entity.AI.chat.ChatGPTMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;

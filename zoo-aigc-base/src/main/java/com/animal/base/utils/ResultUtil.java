@@ -2,7 +2,6 @@ package com.animal.base.utils;
 
 import com.animal.base.common.BaseResponse;
 import com.animal.base.common.ErrorCode;
-import com.animal.product.common.ErrorCode;
 
 /**
  * @author 咏鹅

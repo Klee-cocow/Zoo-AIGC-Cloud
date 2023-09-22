@@ -24,8 +24,6 @@ import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
-import net.sf.jsqlparser.statement.select.KSQLJoinWindow;
-import net.sf.jsqlparser.statement.select.KSQLWindow;
 import org.dom4j.DocumentException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -37,7 +35,7 @@ import java.net.URLEncoder;
 import java.sql.Timestamp;
 import java.util.Map;
 import java.util.Objects;
-
+import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -140,7 +138,7 @@ public class WxUserServiceImpl implements WxUserService {
     }
 
     @Override
-    public String responseMsg(HttpServletRequest request, HttpServletResponse response) {
+    public String responseMsg(HttpServletRequest request, HttpServletResponse response) throws DocumentException {
         try {
             request.setCharacterEncoding("UTF-8");
             Map<String, String> msg = CommonToolUtils.xmlToMap(request);
@@ -186,8 +184,7 @@ public class WxUserServiceImpl implements WxUserService {
                     ZooUsers users = usersMapper.selectOne(queryWrapper);
                     zooUsers = usersMapper.selectById(users.getId());
                 }
-                // 这里 jdk21 有bug TimeUnit.SECONDS  使用不了 只能用 pow(1000,3)来表示了
-//                redisTemplate.opsForValue().set(ticket, String.valueOf(zooUsers.getId()),10, TimeUnit.DAYS);
+                redisTemplate.opsForValue().set(ticket, String.valueOf(zooUsers.getId()),10, TimeUnit.DAYS);
                 return subscribeReturnXml;
             }
         } catch (IOException e) {
@@ -216,7 +213,7 @@ public class WxUserServiceImpl implements WxUserService {
             UserVO currentUser = new UserVO();
             BeanUtils.copyProperties(zooUsers,currentUser);
             String jwt = JwtUtil.generateToken(currentUser);
-//            redisTemplate.opsForValue().set(UserConstant.USER_LOGIN_STATE + jwt+UserConstant.USER_LOGIN_SUB_STATE, jwt, 7, KSQLJoinWindow.TimeUnit.DAYS);
+            redisTemplate.opsForValue().set(UserConstant.USER_LOGIN_STATE + jwt+ UserConstant.USER_LOGIN_SUB_STATE, jwt, 7, TimeUnit.DAYS);
             return jwt;
         }
         //还有判断二维码过期操作

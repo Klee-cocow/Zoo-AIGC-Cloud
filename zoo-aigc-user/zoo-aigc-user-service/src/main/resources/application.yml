@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    password: flamingo
+    url: jdbc:mysql://43.138.83.101:3306/Zoo_AIGC?characterEncoding=utf-8&serverTimezone=UTC
+    username: root
